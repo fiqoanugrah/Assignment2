@@ -1,25 +1,42 @@
 {% extends 'base.html' %}
 
- {% block content %}
+{% block content %}
 
-  <h1>Lab 1 Assignment PBP/PBD</h1>
+<h1>Lab 1 Assignment PBP/PBD</h1>
 
-  <h5>Name: </h5>
-  <p>Fill me!</p>
+<h5>Name: </h5>
+<b>{{name}}</b>
 
-  <h5>Student ID: </h5>
-  <p>Fill me!</p>
+<h5>Student ID: </h5>
+<b>{{NPM}}</b>
 
-  <table>
+<div class="limiter">
+  <div class="container-table100">
+  <div class="wrap-table100">
+  <div class="table100">
+<table> 
+<thead>
+  <tr>
+    <th>Item Name</th>
+    <th>Item Price</th>
+    <th>Item Stock</th>
+    <th>Rating</th>
+    <th>Description</th>
+    <th>Item URL</th>
+  </tr>
+</thead>
+
+  {% comment %} Add the data below this line {% endcomment %}
+  {% for item in list_item %}
     <tr>
-      <th>Item Name</th>
-      <th>Item Price</th>
-      <th>Item Stock</th>
-      <th>Rating</th>
-      <th>Description</th>
-      <th>Item URL</th>
+        <th>{{item.item_name}}</th>
+        <th>{{item.item_price}}</th>
+        <th>{{item.item_stock}}</th>
+        <th>{{item.rating}}</th>
+        <th>{{item.description}}</th>
+        <th>{{item.item_url}}</th>
     </tr>
-    {% comment %} Add the data below this line {% endcomment %}
+  {% endfor %}
   </table>
 
- {% endblock content %}
+{% endblock content %}
