@@ -20,10 +20,11 @@ Yes it is, but let's suppose you want to work with two distinct Python projects,
 
 ## implement the steps from point 1 to point 4
 
-# Step 1 (views.py)
+### Step 1 (views.py)
 
 In this first step, I added a function called show_katalog to this file that returns the render function, which has a function to display the Katalog.html
 
+```shell
  def show_katalog(request):
    return render(request,"katalog.html", context)
 
@@ -33,25 +34,26 @@ context ={
     'name': 'Muhammad Fiqo Anugrah',
     'NPM' : '2106657286'
 }
+```
 
-# Step 2 (urls.py)
+### Step 2 (urls.py)
 
 The views function is routed at this phase to enable the browser to display the HTML page. The show_Katalog function is called with the addition of the variable url patterns.
-
+```shell
 urlpatterns = [
    path('', show_katalog, name='show_katalog'),
 ]
 
 Additionally, the URL katalog/ is registered in the urls.py file on project django using the code below.
-
+'''
 ..
 path('katalog/', include('katalog.urls')),
 ..
 
-# Step 3 (katalog.html)
+### Step 3 (katalog.html)
 
 Make a loop with list item on this step to take the data that is already saved inside of models.py in order to display the list of items in a table.
-
+```shell
 {% for item in list_item %}
    <tr>
      <th>{{item.item_name}}</th>
@@ -61,8 +63,8 @@ Make a loop with list item on this step to take the data that is already saved i
      <th>{{item.description}}</th>
      <th>{{item.item_url}}</th>
    </tr>
-   
-# Step 4 (Deploy)
+'''
+### Step 4 (Deploy)
 
 We execute the three git commands—git add, git commit, and git push—after we've finished altering all the programs, then the repository will show all of the modified codes. Add a secret repository with the API key and the APP name to Heroku to deploy it.
 
