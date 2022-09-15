@@ -56,7 +56,7 @@ path('katalog/', include('katalog.urls')),
 
 ### Step 3 (katalog.html)
 
-Make a loop with list item on this step to take the data that is already saved inside of models.py in order to display the list of items in a table.
+Make a iteration with list item on this step to take the data that is already saved inside of models.py in order to display the list of items in a table.
 ```shell
 {% for item in list_item %}
    <tr>
