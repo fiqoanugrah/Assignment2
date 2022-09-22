@@ -1,5 +1,5 @@
 
-# PBD Assignmen 2 Project
+# PBD Assignment 2 Project
 Muhammad Fiqo Anugrah (2106657286)
 
 Heroku Hyperlink : https://assignment2-fiqoanugrah.herokuapp.com/katalog/
