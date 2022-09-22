@@ -1,4 +1,3 @@
-from django.test import TestCase
 from multiprocessing.connection import Client
 from django.test import TestCase, Client
 from django.urls import resolve
