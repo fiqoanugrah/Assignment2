@@ -5,7 +5,7 @@
   <h1> Assignment-3 PBD </h1>
 
   <h5>Name: </h5>
-  <b>{{name}}</b>
+  <b>{{nama}}</b>
 
   <h5>Student ID: </h5>
   <b>{{id}}</b>
@@ -13,9 +13,7 @@
   <h5>Message: </h5>
   <b>{{message}}</b>
 
-  <body bgcolor=”#FFFF00">
-
-  <table border = "6" bordercolor = "yellow">
+  <table border = "1" bordercolor = "gray">
     <tr>
       <th>Watched</th>
       <th>Title</th>
@@ -24,7 +22,7 @@
       <th>Review</th>
     </tr>
     {% comment %} Add the data below this line {% endcomment %}
-    {% for mywatchlist in list_mywatchlist %}
+    {% for mywatchlist in mywatchlist_list %}
     <tr>
         <th>{{mywatchlist.watched}}</th>
         <th>{{mywatchlist.title}}</th>

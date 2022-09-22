@@ -13,6 +13,7 @@ def show_mywatchlist(request):
     watched_number = 0
     unwatched_number = 0
     message = ""
+
     for x in mywatchlist_data:
         if x.watched == True:
             watched_number+=1
@@ -25,7 +26,7 @@ def show_mywatchlist(request):
 
     context = {
         'mywatchlist_list': mywatchlist_data,
-        'name': 'Muhammad Fiqo Anugrah',
+        'nama': 'Muhammad Fiqo Anugrah',
         'id': '2106657286',
         'message': message
     }
