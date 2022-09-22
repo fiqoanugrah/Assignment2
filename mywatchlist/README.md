@@ -57,7 +57,7 @@ urlpatterns = [
 ```
 12. Registering `mywatchlist` application into `urls.py` in `urlpatterns` variable in `project_django` folder with additional code:
 ``` shell
-path('wishlist/', include('wishlist.urls')),
+path('watchlist/', include('watchlist.urls')),
 ```
 14. Import **models** in the **views** function that I created into the `views.py` file
 15. Add code to `show_mywatchlist` function to call the **query** function to the **model database**, then store the results of the **query** into a variable.
