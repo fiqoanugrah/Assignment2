@@ -14,7 +14,7 @@ Muhammad Fiqo Anugrah (2106657286)
 
 JSON stands for JavaScript Object Notation, JSON is a format used to read, store, or store information from a web server so that it can be read by users. JSON is very easy to use because it has been designed to describe itself. The data stored in JSON consists of keys and values. value can be in two structures, namely paired values ​​such as objects and values ​​in the form of primitive data types such as string, number, boolean. The JSON syntax is an instance of JavaScript Object. However, the json format is text, so creating & reading JSON can be used by other programming languages ​​such as PHP, C++, Python, and Ruby.
 
-And then XML stands for eXtensible Markup Language. XML has been used in many web or mobile applications, which function to transmit and store data. XML has been designed to be self-descriptive, so we can understand what information we want to convey from the written data by reading the XML. This XML is just information wrapped in tags.
+Then XML stands for eXtensible Markup Language. XML has been used in many web or mobile applications, which function to transmit and store data. XML has been designed to be self-descriptive, so we can understand what information we want to convey from the written data by reading the XML. This XML is just information wrapped in tags.
 
 While HTML stands for Hypertext Markup Language or "markup language". In general, HTML is a programming standard that serves to create / build a page on a website that can later be accessed and displayed via the internet.
 
