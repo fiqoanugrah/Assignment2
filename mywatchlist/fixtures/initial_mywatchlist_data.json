@@ -1,0 +1,112 @@
+[
+    {
+        "model": "mywatchlist.watchlist",
+        "pk": 1,
+        "fields": {
+            "watched": true,
+            "title": "The Curious Case of Benjamin Button",
+            "rating": 5,
+            "release_date": "December 25, 2008",
+            "review": "The Curious Case of Benjamin Button is a splendidly made film based on a profoundly mistaken premise. It tells the story of a man who is old when he is born and an infant when he dies. All those around him, everyone he knows and loves, grow older in the usual way, and he passes them on the way down"
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "pk": 2,
+        "fields": {
+            "watched": true,
+            "title": "The Shawshank Redemption",
+            "rating": 5,
+            "release_date": "September 22, 1994",
+            "review": "The Shawshank Redemption is not a depressing story, although I may have made it sound that way. There is a lot of life and humor in it, and warmth in the friendship that builds up between Andy and Red. There is even excitement and suspense, although not when we expect it."
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "pk": 3,
+        "fields": {
+            "watched": false,
+            "title": "Django unchained",
+            "rating": 5,
+            "release_date": "December 11, 2012",
+            "review": "A good film, and a crazily entertaining film, until Tarantino does blow everything up, at which point it just becomes rather silly. The film is at times brilliant but mostly infuriating. It is a good movie in that masturbatory way most Tarantino films are good."
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "pk": 4,
+        "fields": {
+            "watched": true,
+            "title": "The Godfather",
+            "rating": 5,
+            "release_date": "March 24, 1972",
+            "review": "The Godfather is told entirely within a closed world. That’s why we sympathize with characters who are essentially evil. The story by Mario Puzo and Francis Ford Coppola is a brilliant conjuring act, inviting us to consider the Mafia entirely on its own terms. Don Vito Corleone (Marlon Brando) emerges as a sympathetic and even admirable character; during the entire film, this lifelong professional criminal does nothing of which we can really disapprove."
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "pk": 5,
+        "fields": {
+            "watched": true,
+            "title": "The Truman Show",
+            "rating": 5,
+            "release_date": "June 5, 1998",
+            "review": "The script is very creative, doubting that this is not a movie at all, but a complete realization at the end of life; to the so-called real world, although there are lies and hurt, but cruel truth is always better than false content; The mediocre person never notices."
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "pk": 6,
+        "fields": {
+            "watched": true,
+            "title": "Interstellar",
+            "rating": 5,
+            "release_date": "October 26, 2014",
+            "review": "This is one of the most beautiful films I have ever seen."
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "pk": 7,
+        "fields": {
+            "watched": false,
+            "title": "Avengers: Endgame",
+            "rating": 5,
+            "release_date": "April 22, 2019",
+            "review": "From the very beginning “Avengers: Endgame” feels like something special, something unique, something unlike anything we’ve seen before. And even in its missteps it never loses that sense of spectacle and grandeur."
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "pk": 8,
+        "fields": {
+            "watched": true,
+            "title": "Inception",
+            "rating": 4,
+            "release_date": "July 16, 2010",
+            "review": "It's not nearly as confusing as many make it out to be, but if you do find yourself losing the plot a bit, remember you're at the movies and just let it overwhelm you. That's part of the fun."
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "pk": 9,
+        "fields": {
+            "watched": true,
+            "title": "Harry Potter and the Sorcerer's Stone",
+            "rating": 4,
+            "release_date": "December 19, 2001",
+            "review": "It's not a great movie, but it is an iconic one, a popular classic for the ages and not without reason beyond sheer marketing dollars."
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "pk": 10,
+        "fields": {
+            "watched": false,
+            "title": "1917",
+            "rating": 4,
+            "release_date": "4 December 2019",
+            "review": "With “1917” Sam Mendes takes his audience on a perilous journey driven by a simple but tightly-wound story soaked in an unending tension. It’s a harrowing tale of heroism, friendship, and sacrifice."
+        }
+    }
+]
