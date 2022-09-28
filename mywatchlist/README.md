@@ -7,9 +7,17 @@ Muhammad Fiqo Anugrah (2106657286)
 
 ### HTML
 
+<img width="955" alt="image" src="https://user-images.githubusercontent.com/87713462/191658052-8decb57b-2850-4e91-85bc-5a62fb8c062d.png">
+
 ### JSON
 
+<img width="956" alt="image" src="https://user-images.githubusercontent.com/87713462/191658202-c36d34c6-d759-49e1-83eb-b8c2016b4a9d.png">
+
+
 ### XML
+
+<img width="957" alt="image" src="https://user-images.githubusercontent.com/87713462/191658264-ab817c59-3360-475d-ae4f-322655343250.png">
+
 
 ## The difference between JSON, XML, and HTML!
 
