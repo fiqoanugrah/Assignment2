@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block meta %}
 <title>Account Registration</title>
 {% endblock meta %}
 
-{% block content %}  
+{% block content %} 
 
 <div class = "login">
-    
+    <link rel="stylesheet" href="{% static 'register.css' %}" />
     <h1>Registration Form</h1>  
-
+    
         <form method="POST" >  
             {% csrf_token %}  
             <table>  

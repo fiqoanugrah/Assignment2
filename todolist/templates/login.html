@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block meta %}
 <title>Login</title>
@@ -6,39 +7,39 @@
 
 {% block content %}
 
-<div class = "login">
+<link rel="stylesheet" href="{% static 'login.css' %}" />
 
-    <h1>Login</h1>
+<div class="login">
 
-    <form method="POST" action="">
+    <form method="POST">
         {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-            </tr>
 
-            <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
+        <body
+            style="background-image: url(https://upload.wikimedia.org/wikipedia/id/thumb/0/0f/Makara_of_Universitas_Indonesia.svg/1200px-Makara_of_Universitas_Indonesia.svg.png);">
+        </body>
+        <div class="container">
+            <div class="brand-logo"></div>
+            <div class="brand-title">LOGIN</div>
+            <div class="inputs">
+                <div class="form">
+                    <label>USERNAME</label>
+                    <input type="text" name="username" placeholder="Username" />
+                    <label>PASSWORD</label>
+                    <input type="password" name="password" placeholder="Password" />
+                    <button class="submit" type="text">LOGIN</button>
+                    <a href="{% url 'todolist:register' %}">Create Account</a>
+                    {% if messages %}
 
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
-        </table>
+                    <ul>
+                        {% for message in messages %}
+                        <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+            </div>
     </form>
 
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-
-    Don't have an account? <a href="{% url 'todolist:register' %}">Create Account</a>
 
 </div>
 

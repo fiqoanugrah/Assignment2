@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
 
  {% block content %}
-
+  <link rel="stylesheet" href="{% static 'todolist.css' %}" />
+  
   <h1>Assignment 4 PBP/PBD</h1>
 
   <h5>Welcome {{username}} </h5>
@@ -23,12 +25,11 @@
         </tr>
     {% endfor %}
   </table>
-
-
-
-
+  
   <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
   <button><a href="{% url 'todolist:new_task' %}">Create new task</a></button>
 
 
   {% endblock content %}
+
+  
