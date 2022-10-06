@@ -1,35 +1,60 @@
 {% extends 'base.html' %}
 {% load static %}
 
- {% block content %}
-  <link rel="stylesheet" href="{% static 'todolist.css' %}" />
-  
-  <h1>Assignment 4 PBP/PBD</h1>
+{% block content %}
 
-  <h5>Welcome {{username}} </h5>
+<link rel="stylesheet" href="{% static 'todolist.css' %}" />
+<link rel="stylesheet" href="{% static 'menu.css' %}" />
 
-  <table>
-    <tr>
-        <th>Date</th>
-        <th>Title</th>
-        <th>Description</th>
 
-    </tr>
-    {% comment %} Add the data below this line {% endcomment %}
-    {% comment %} Add data below {% endcomment %}
-    {% for item in list_item %}
-        <tr>
-            <th>{{item.date}}</th>
-            <th>{{item.title}}</th>
-            <th>{{item.description}}</th>
-        </tr>
+<audio autoplay loop src="Music/GenderangUniversitasIndonesia.mp3"></audio>
+<h5>Welcome to {{username}}'s To-Do List </h5>
+
+
+<body
+            style="background-image: url(https://i.pinimg.com/originals/6d/c8/f1/6dc8f11334c7e1564bde781d84f9dfb7.gif);
+            background-size: 100%;
+            background-repeat: no-repeat;">
+        </body>
+
+<div class="container">
+    {% for task in list_item %}
+    <div class="card">
+        <div class="box">
+            <div class="content">
+                {% comment %} Add the data below this line {% endcomment %}
+                {% comment %} Add data below {% endcomment %}
+                <h2>DO</h2>
+                
+                <h3>{{task.title}}</h3>
+                <p>{{task.date}}</p>
+                <li>{{task.description}}</li>
+                <a href="{% url 'todolist:delete_task' id=task.id %}">Delete</a>
+                <a href="{% url 'todolist:new_task' %}">New Task</a>
+            </div>
+        </div>
+    </div>
     {% endfor %}
-  </table>
-  
-  <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
-  <button><a href="{% url 'todolist:new_task' %}">Create new task</a></button>
+</div>
+
+<a href="https://scele.cs.ui.ac.id/" class="logo" target="_blank">
+    <img src="https://acakadul.files.wordpress.com/2013/08/makara-ui-fasilkom.png" alt="" style="background-size: 130%">
+</a>
+
+  <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon"/>
+  <label for="menu-icon"></label>
+  <nav class="nav"> 		
+      <ul class="pt-5">
+          <li><a href="{% url 'todolist:show_todolist' %}">Home</a></li>
+          <li><a href="{% url 'todolist:new_task' %}">Create New Task</a></li>
+          <li><a href="{% url 'todolist:register' %}">Sign Up</a></li>
+          <li><a href="{% url 'todolist:logout' %}">Sign Out</a></li>
+      </ul>
+  </nav>
 
 
-  {% endblock content %}
+<!-- <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+<button><a href="{% url 'todolist:new_task' %}">Create new task</a></button> -->
 
-  
+
+{% endblock content %}

@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 import datetime
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 # TODO: Create your views here.
 @login_required(login_url='/todolist/login/')
@@ -59,3 +60,26 @@ def new_task(request):
         return response
     context = {}
     return render(request, 'new_task.html',context)
+
+def change_status(request, id):
+    task = Task.objects.get(id = id)
+    task.is_finished = not task.is_finished
+    task.save()
+    return HttpResponseRedirect(reverse('todolist:show_todolist'))
+
+def delete_task(request, id):
+    Task.objects.get(id = id).delete()
+    return HttpResponseRedirect(reverse('todolist:show_todolist'))
+
+def delete_task(request,id):
+    task = Task.objects.get(id =id)
+    task.delete()
+    return redirect('todolist:show_todolist')
+
+
+def change_status(request,id):
+    status = Task.objects.get(id = id)
+    status.is_finished = not(status.is_finished)
+    status.save()
+
+    return redirect('todolist:show_todolist')

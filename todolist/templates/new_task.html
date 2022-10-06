@@ -3,32 +3,169 @@
 
 {% block meta %}
 <title>Create New Task</title>
-<link rel="stylesheet" href="{% static 'new_task.css' %}" />
 {% endblock meta %}
 
+<link rel="stylesheet" href="{% static 'new_task.css' %}" />
+
 {% block content %}
-<form method="POST">
-    {% csrf_token %}
-    <table>
-        <tr>
-            <td>Task Title: </td>
-            <td><input type="text" name="title" placeholder="Enter Task Title" class="form-control"></td>
-        </tr>
 
-        <tr>
-            <td>Task Description: </td>
-            <td><input type="text" name="description" placeholder="Enter Task Description" class="form-control"></td>
-        </tr>
+<div class="login">
 
-        <tr>
-            <td></td>
-            <td><input type="submit" name="submit" value="Submit"/></td>
-        </tr>
-    </table>
-</form>
+    <form method="POST">
+        {% csrf_token %}
+
+        <body
+            style="background-image: url(https://upload.wikimedia.org/wikipedia/id/thumb/0/0f/Makara_of_Universitas_Indonesia.svg/1200px-Makara_of_Universitas_Indonesia.svg.png);">
+        </body>
+        <div class="container">
+            <div class="brand-logo"></div>
+            <div class="brand-title">Create New Task</div>
+            <div class="inputs">
+
+                <div class="form">
+                    <label>Task Title:</label>
+                    <input type="text" name="title" placeholder="Enter Task Title" class="form-control">
+                    <label>Task Description:</label>
+                    <input type="text" name="description" placeholder="Enter Task Description" class="form-control">
+                    <input type="submit" name="submit" value="Submit"/>
+           
+                </div>
+            </div>
+    </form>
+</div>
+</div>
 
 
 
 
 
 {% endblock content %}
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+
+
+input {
+  caret-color: red;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #ecf0f3;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  place-items: center;
+  overflow: hidden;
+  font-family: poppins;
+}
+
+.container {
+  position: relative;
+  width: 350px;
+  height: 500px;
+  border-radius: 80px;
+  padding: 40px;
+  box-sizing: border-box;
+  background: #ecf0f3;
+  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+}
+
+/* .brand-logo {
+  height: 100px;
+  width: 100px;
+  background: url("https://i.ytimg.com/vi/GM07SXU7lEo/maxresdefault.jpg");
+  margin: auto;
+  border-radius: 50%;
+  box-sizing: border-box;
+  box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
+} */
+
+.brand-title {
+  margin-top: 10px;
+  font-weight: 900;
+  font-size: 1.8rem;
+  color: #FBC801;
+  letter-spacing: 1px;
+}
+
+.inputs {
+  text-align: left;
+  margin-top: 30px;
+}
+
+label, input, button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+label {
+  margin-bottom: 4px;
+}
+
+label:nth-of-type(2) {
+  margin-top: 12px;
+}
+
+input::placeholder {
+  color: gray;
+}
+
+input {
+  background: #ecf0f3;
+  padding: 10px;
+  padding-left: 20px;
+  height: 50px;
+  font-size: 14px;
+  border-radius: 50px;
+  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+}
+
+button {
+  color: rgb(0, 0, 0);
+  margin-top: 20px;
+  background: #FBC801;
+  height: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 900;
+  box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+  transition: 0.5s;
+}
+
+button:hover {
+  box-shadow: none;
+}
+
+a {
+  position: absolute;
+  font-size: 10px;
+  bottom: 40px;
+  right: 133px;
+  text-decoration: none;
+  color: black ;
+  background: #FBC801;
+  border-radius: 6px;
+  padding: 2px;
+}
+
+h1 {
+  top: 0;
+  left: 0;
+}
+
+li{
+    position: absolute;
+    font-size: 10px;
+    color: black;
+    height: px;
+}
+</style>

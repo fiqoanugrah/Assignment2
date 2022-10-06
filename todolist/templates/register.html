@@ -4,32 +4,37 @@
 <title>Account Registration</title>
 {% endblock meta %}
 
-{% block content %} 
+{% block content %}
 
-<div class = "login">
-    <link rel="stylesheet" href="{% static 'register.css' %}" />
-    <h1>Registration Form</h1>  
-    
-        <form method="POST" >  
-            {% csrf_token %}  
-            <table>  
-                {{ form.as_table }}  
-                <tr>  
-                    <td></td>
-                    <td><input type="submit" name="submit" value="Daftar"/></td>  
-                </tr>  
-            </table>  
-            <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
-        </form>
+<link rel="stylesheet" href="{% static 'register.css' %}" />
 
-    {% if messages %}  
-        <ul>   
-            {% for message in messages %}  
-                <li>{{ message }}</li>  
-                {% endfor %}  
-        </ul>   
-    {% endif %}
+<form method="POST">
+    {% csrf_token %}
 
-</div>  
+    <body
+        style="background-image: url(https://upload.wikimedia.org/wikipedia/id/thumb/0/0f/Makara_of_Universitas_Indonesia.svg/1200px-Makara_of_Universitas_Indonesia.svg.png);">
+    </body>
+    <div class="container">
+        <div class="brand-logo"></div>
+        <div class="brand-title">REGISTRATION</div>
+        <div class="inputs">
+
+            {{ form.as_table }}
+
+            <div class="login">
+                <a href="{% url 'todolist:register' %}">Create Account</a>
+            </div>
+            <button><a href="{% url 'todolist:logout' %}">Sign In</a></button>
+        </div>
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</div>
+</form>
 
 {% endblock content %}
