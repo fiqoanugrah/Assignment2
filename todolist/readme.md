@@ -70,52 +70,35 @@ all at once, but to *debug* it can be a little confusing.
 
 ## Tag HTML5
 
-<abbr> : Defines the abbreviated form of a longer word or phrase
-<address> : Specifies the author's contact information
-<area> : Defines a specific area in the image map
-<article> : Defines an article
-<aside> : Defines some content related to web page content
-<audio> : Insert sound or audio in HTML document
-<b> : Display text in bold or bold style
-<base> : Defines the base URL for all relative URLs in the document
-<bdi> : Represents isolated text for the purpose of text formatting
-<bdo> : Override text direction
-<blockquote> : Represents a passage taken from another source
-<body> : Defines the body of a document
-<br> : Generates a line break
-<button> : Creates a clickable button
-<canvas> : Defines a section or region in the document
-<caption> : Defines the caption or title of a table
-<cite> : Indicates a citation or reference to another source
-<code> : Specifies text as computer code
-<col> : Defines attribute values ​​for one or more columns in the table
-<colgroup> : Specifies attributes for multiple columns in a table
-<data> : Puts content that has machine-readable translation
-<datalist> : Represents a predefined set of options for an input element
-<dd> : Specifies the description on dt and dl
-<del> : Represents text that has been removed from the document
-<details> : Represents a widget where the user can get information
-<dfn> : Specifies a definition
-<dialog> : Defines a dialog box or subwindow
-<div> : Specifies a section or division in the document
-<dl> : Defines a list description
-<dt> : Defines an item in the description list
-<em> : Defines emphasized text
-<embed> : Embeds external applications such as media content into HTML documents
-<fieldset> : Specifies a set regarding the form
-<figcaption> : Defines a caption or legend for the image
-<figure> : Represents the illustrated image
-<footer> : Represents the footer of a document or section
-<form> : Defines an HTML form for user input
-<head> : Defines the head section of the document such as the title
-<header> : Represents the header of a document or section
-<hgroup> : Defines a group containing headers
-<h1> to <h6> : Defines the HTML header
-<hr> : Returns a horizontal line
-<html> : Defines the root of an HTML document
-<i> : Display text in italic or italic style
-<iframe> : Displays a url in Inline frame
-<img> : Represents an image
+`<a>` : Defines a Hyperlink <br />
+`<abbr>` : Defines the abbreviated form of a longer word or phrase <br />
+`<address>` : Specifies the author's contact information <br />
+`<area>` : Defines a specific area in the image map <br />
+`<article>` : Defines an article <br />
+`<aside>` : Defines some content related to web page content <br />
+`<audio>` : Insert sound or audio in HTML document <br />
+`<b>` : interested in text in bold style <br />
+`<base>` : Defines the base URL for all relative URLs in the document <br />
+`<bdi>` : Represents text that describes the purpose of the text formatting <br />
+`<bdo>` : Change the text direction <br />
+`<blockquote>` : Represents a passage taken from another source <br />
+`<body>` : Defines the body of a document <br />
+`<br>` : has a line break <br />
+`<button>` : Creates a clickable button <br />
+`<canvas>` : Defines a section or region in the document <br />
+`<caption>` : Defines the caption or title of a table <br />
+`<cite>` : a quote or reference to another source <br />
+`<code>` : Specifies text as computer code <br />
+`<col>` : Defines attribute values ​​for one or more columns in the <br /> table
+`<colgroup>` : Specifies attributes for multiple columns in a table <br />
+`<data>` : Puts content that has a machine-readable translation <br />
+`<datalist>` : Represents the predefined set of options for an input element <br />
+`<dd>` : Specifies the description of dt and dl <br />
+`<del>` : Represents text that has been deleted from the document <br />
+`<details>` : Represents a widget where the user can get information <br />
+`<dfn>` : Specifies a definition <br />
+`<dialog>` : Defines a dialog box or subwindow <br />
+`<div>` : Specifies a section or division in the document <br />
 
 ## Types of CSS Selector
 - `*` -- Universal selector, matches all elements.
