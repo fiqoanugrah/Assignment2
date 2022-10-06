@@ -1,4 +1,3 @@
-
 #Assignment 4
 Muhammad Fiqo Anugrah
 2106657286
@@ -51,3 +50,44 @@ In the `<input>` tag, the `name="<variable-name>"` attribute must be added, so t
 6. Create a form for creating tasks manually in the templates folder (without using forms.py) using the POST method
 7. Make routing on todolist/urls.py according to requirements using the appropriate function from views.py
 8. Deploy to Heroku using the Repository from GitHub. Then create 2 dummy accounts along with 3 dummy data on the website resulting from the deployment
+
+
+
+
+# Assignment 5
+
+## Inline vs Internal vs External CSS
+
+Aspek | Inline | Internal | External
+------|--------|----------|---------
+Loction | Inside element with atrr `style` | Inside HTML with `<style>` tag  | Inside `.css` file that'll be -*import* inside tag `<tag>`
+Scope | Only element that used | single page | every page that have import file
+
+Inline CSS has the advantage of limiting to an element, but the tag will look a bit messy because of the style
+mixed with HTML. Internal CSS has the advantage that it can be limited to a certain page, but if there are several
+rules that are repeated for other pages, become inefficient. While external has the advantage of sharing styles to multiple pages
+all at once, but to *debug* it can be a little confusing.
+
+## Tag HTML5
+
+> Tidak termasuk tag yang sudah ada sebelum HTML5 seperti `<div>`
+
+Some of the tags I know of are `<section>` which denotes a different part of the page, `<main>` which indicates that
+the section is the main part of the page, `<aside>` which is used to denote an unrelated section
+directly with the main content, and so on.
+
+## Types of CSS Selector
+- `*` -- Universal selector, matches all elements.
+- `elementname` (example: `input`) -- Type selector, selects a tag.
+- `.classname` -- Class selector, selects the tag with the class called
+- `#idname` -- ID selector, selects the element that has that ID
+
+## Checklist
+- DaisyUI installation via CDN which is in [DaisyUI documentation](https://daisyui.com/docs/cdn/)
+- Make changes using existing components in DaisyUI documentation and layouting
+  which can be done with Tailwind CSS.
+- To be responsive, some components have responsive classes based on
+  [Tailwind CSS responsive design system](https://tailwindcss.com/docs/responsive-design) which uses
+  breakpoints.
+- For a bonus, use [scale](https://tailwindcss.com/docs/scale) and the tailwind pseudoclass `hover:`
+  and add animation with [transition](https://tailwindcss.com/docs/transition-property)
