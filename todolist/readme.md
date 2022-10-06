@@ -70,24 +70,55 @@ all at once, but to *debug* it can be a little confusing.
 
 ## Tag HTML5
 
-> Tidak termasuk tag yang sudah ada sebelum HTML5 seperti `<div>`
-
-Some of the tags I know of are `<section>` which denotes a different part of the page, `<main>` which indicates that
-the section is the main part of the page, `<aside>` which is used to denote an unrelated section
-directly with the main content, and so on.
+<abbr> : Defines the abbreviated form of a longer word or phrase
+<address> : Specifies the author's contact information
+<area> : Defines a specific area in the image map
+<article> : Defines an article
+<aside> : Defines some content related to web page content
+<audio> : Insert sound or audio in HTML document
+<b> : Display text in bold or bold style
+<base> : Defines the base URL for all relative URLs in the document
+<bdi> : Represents isolated text for the purpose of text formatting
+<bdo> : Override text direction
+<blockquote> : Represents a passage taken from another source
+<body> : Defines the body of a document
+<br> : Generates a line break
+<button> : Creates a clickable button
+<canvas> : Defines a section or region in the document
+<caption> : Defines the caption or title of a table
+<cite> : Indicates a citation or reference to another source
+<code> : Specifies text as computer code
+<col> : Defines attribute values ​​for one or more columns in the table
+<colgroup> : Specifies attributes for multiple columns in a table
+<data> : Puts content that has machine-readable translation
+<datalist> : Represents a predefined set of options for an input element
+<dd> : Specifies the description on dt and dl
+<del> : Represents text that has been removed from the document
+<details> : Represents a widget where the user can get information
+<dfn> : Specifies a definition
+<dialog> : Defines a dialog box or subwindow
+<div> : Specifies a section or division in the document
+<dl> : Defines a list description
+<dt> : Defines an item in the description list
+<em> : Defines emphasized text
+<embed> : Embeds external applications such as media content into HTML documents
+<fieldset> : Specifies a set regarding the form
+<figcaption> : Defines a caption or legend for the image
+<figure> : Represents the illustrated image
+<footer> : Represents the footer of a document or section
+<form> : Defines an HTML form for user input
+<head> : Defines the head section of the document such as the title
+<header> : Represents the header of a document or section
+<hgroup> : Defines a group containing headers
+<h1> to <h6> : Defines the HTML header
+<hr> : Returns a horizontal line
+<html> : Defines the root of an HTML document
+<i> : Display text in italic or italic style
+<iframe> : Displays a url in Inline frame
+<img> : Represents an image
 
 ## Types of CSS Selector
 - `*` -- Universal selector, matches all elements.
 - `elementname` (example: `input`) -- Type selector, selects a tag.
 - `.classname` -- Class selector, selects the tag with the class called
 - `#idname` -- ID selector, selects the element that has that ID
-
-## Checklist
-- DaisyUI installation via CDN which is in [DaisyUI documentation](https://daisyui.com/docs/cdn/)
-- Make changes using existing components in DaisyUI documentation and layouting
-  which can be done with Tailwind CSS.
-- To be responsive, some components have responsive classes based on
-  [Tailwind CSS responsive design system](https://tailwindcss.com/docs/responsive-design) which uses
-  breakpoints.
-- For a bonus, use [scale](https://tailwindcss.com/docs/scale) and the tailwind pseudoclass `hover:`
-  and add animation with [transition](https://tailwindcss.com/docs/transition-property)
