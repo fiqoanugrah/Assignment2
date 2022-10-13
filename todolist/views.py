@@ -1,3 +1,4 @@
+import datetime
 from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
@@ -6,10 +7,9 @@ from todolist.models import Task
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
-import datetime
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.urls import reverse
-from django.contrib.auth.models import User
+from django.core import serializers
 
 # TODO: Create your views here.
 @login_required(login_url='/todolist/login/')
@@ -61,25 +61,31 @@ def new_task(request):
     context = {}
     return render(request, 'new_task.html',context)
 
-def change_status(request, id):
-    task = Task.objects.get(id = id)
-    task.is_finished = not task.is_finished
+def update_task(request, id):
+    task = Task.objects.get(pk=id)
+    if task.is_finished:
+        task.is_finished = False
+    else:
+        task.is_finished = True
     task.save()
-    return HttpResponseRedirect(reverse('todolist:show_todolist'))
+    return HttpResponseRedirect("/todolist/")
 
 def delete_task(request, id):
-    Task.objects.get(id = id).delete()
-    return HttpResponseRedirect(reverse('todolist:show_todolist'))
-
-def delete_task(request,id):
-    task = Task.objects.get(id =id)
+    task = Task.objects.get(pk=id)
     task.delete()
-    return redirect('todolist:show_todolist')
+    return HttpResponseRedirect("/todolist/")
 
 
-def change_status(request,id):
-    status = Task.objects.get(id = id)
-    status.is_finished = not(status.is_finished)
-    status.save()
+# Assignment 6
+@login_required(login_url="/todolist/login")
+def show_todolist_json(request):
+    tasks = Task.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize('json', tasks), content_type='application/json')
 
-    return redirect('todolist:show_todolist')
+def add_task(request):
+    if request.method == "POST":
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+        new_task = Task(user=request.user, title=title, description=description, date=datetime.now())
+        new_task.save()
+    return HttpResponse('')

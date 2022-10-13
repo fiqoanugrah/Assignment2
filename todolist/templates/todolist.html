@@ -1,60 +1,144 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
+{% block meta %}
+<!-- get data from /todolist/json -->
+<script>
+    $(document).ready(function () {
+        $('.modal').hide();
+        $('.backdrop').hide();
+        $.get('/todolist/json/', function (data, status) {
+            let content = '';
+            for (let i = 0; i < data.length; i++) {
+                let message = data[i].fields.is_finished ? 'Selesai' : 'Belum Selesai';
+                let color = data[i].fields.is_finished ? 'blue' : 'red';
+                content += `
+          <div class="text-white hover:scale-105 duration-150 flex flex-row justify-between p-3 lg:w-[30rem] sm:w-[25rem] h-24 bg-zinc-800 box-shadow-md rounded-xl">
+              <div>
+              <h2 class="font-semibold lg:text-md sm:text-sm">${data[i].fields.title}</h2>
+              <h3 class="lg:text-sm sm:text-xs text-gray-500">${data[i].fields.description}</h3>
+              <p class="text-xs text-gray-500">created: ${data[i].fields.date}</p>
+              <p class="text-xs font-semibold text-${color}-500">${message}</p>
+            </div>
+            <div class="flex flex-col text-sm lg:scale-100 sm:scale-60">
+              <a href="update/${data[i].pk}"><button class="m-1 bg-blue-500 hover:bg-blue-700 hover:cursor-pointer h-7 w-20 rounded-md">Update</button></a>
+              <a href="delete/${data[i].pk}"><button class="m-1 bg-red-500 hover:bg-red-700 hover:cursor-pointer h-7 w-20 rounded-md">Delete</button></a>
+            </div>
+          </div>
+        `;
+                $('.content').html(content);
+            }
+        })
+    })
+</script>
+{% endblock meta %}
+
+
 {% block content %}
 
-<link rel="stylesheet" href="{% static 'todolist.css' %}" />
-<link rel="stylesheet" href="{% static 'menu.css' %}" />
-
-
-<audio autoplay loop src="Music/GenderangUniversitasIndonesia.mp3"></audio>
-<h5>Welcome to {{username}}'s To-Do List </h5>
-
-
-<body
-            style="background-image: url(https://i.pinimg.com/originals/6d/c8/f1/6dc8f11334c7e1564bde781d84f9dfb7.gif);
-            background-size: 100%;
-            background-repeat: no-repeat;">
-        </body>
-
-<div class="container">
-    {% for task in list_item %}
-    <div class="card">
-        <div class="box">
-            <div class="content">
-                {% comment %} Add the data below this line {% endcomment %}
-                {% comment %} Add data below {% endcomment %}
-                <h2>DO</h2>
-                
-                <h3>{{task.title}}</h3>
-                <p>{{task.date}}</p>
-                <li>{{task.description}}</li>
-                <a href="{% url 'todolist:delete_task' id=task.id %}">Delete</a>
-                <a href="{% url 'todolist:new_task' %}">New Task</a>
-            </div>
-        </div>
+<!-- header -->
+<div class="absolute top-0 text-white p-5 h-14 flex flex-row justify-between items-center w-screen bg-slate-700">
+    <h1 class="lg:text-2xl sm:text-xl font-bold">PBD Assignment</h1>
+    <div class="flex flex-row items-center font-semibold lg:scale-100 sm:scale-75">
+        <button class="add-task m-1 bg-green-500 hover:bg-green-700 hover:cursor-pointer px-4 py-2 rounded-lg">Add
+            Task</button>
+        <a href="{% url 'todolist:new_task' %}"><button
+                class="m-1 bg-blue-500 hover:bg-blue-700 hover:cursor-pointer px-4 py-2 rounded-lg">New
+                Task</button></a>
+        <a href="{% url 'todolist:logout' %}"><button
+                class="m-1 bg-red-500 hover:bg-red-700 hover:cursor-pointer px-4 py-2 rounded-lg">Logout</button></a>
     </div>
-    {% endfor %}
 </div>
 
-<a href="https://scele.cs.ui.ac.id/" class="logo" target="_blank">
-    <img src="https://acakadul.files.wordpress.com/2013/08/makara-ui-fasilkom.png" alt="" style="background-size: 130%">
-</a>
+<h1 class="absolute top-16 mb-1 text-center text-xl font-semibold">Welcome to {{username}}'s To do list!</h1>
 
-  <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon"/>
-  <label for="menu-icon"></label>
-  <nav class="nav"> 		
-      <ul class="pt-5">
-          <li><a href="{% url 'todolist:show_todolist' %}">Home</a></li>
-          <li><a href="{% url 'todolist:new_task' %}">Create New Task</a></li>
-          <li><a href="{% url 'todolist:register' %}">Sign Up</a></li>
-          <li><a href="{% url 'todolist:logout' %}">Sign Out</a></li>
-      </ul>
-  </nav>
+<!-- todolist contents -->
+<div class="content absolute top-24 mb-3 grid grid-flow-cols lg:grid-cols-2 sm:grid-cols-1 gap-5 p-5 rounded-xl"></div>
 
+<!-- backdrop modals -->
+<div class="backdrop mt-14 h-[100vh] w-[100vw] bg-red-100 z-10 opacity-80"></div>
 
-<!-- <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
-<button><a href="{% url 'todolist:new_task' %}">Create new task</a></button> -->
+<!-- modals -->
+<div
+    class="modal absolute flex flex-col justify-center items-center z-20 w-[30rem] h-[20rem] bg-gray-100 outline-2 shadow-2xl rounded-xl hover:scale-105 duration-150">
 
+    {% csrf_token %}
+    <h1 class="text-2xl font-bold mb-4">ADD NEW TASK</h1>
+    <div class="flex flex-col m-1">
+        <label class="font-semibold">Judul</label>
+        <input class="judul w-[17rem] p-2 rounded-lg border-[1px] border-black" placeholder="judul" required>
+    </div>
+    <div class="flex flex-col m-1">
+        <label class="font-semibold">Deskripsi</label>
+        <input class="deskripsi w-[17rem] p-2 rounded-lg border-[1px] border-black" placeholder="deskripsi" required>
+    </div>
+    <button
+        class="add-task-button m-3 bg-green-500 hover:bg-green-700 hover:cursor-pointer px-6 py-2 rounded-lg">ADD</button>
+</div>
+
+</div>
+
+<!-- click add task button -->
+<script>
+    $(document).ready(function () {
+        $('.add-task').click(function () {
+            $('.modal').toggle();
+            $('.backdrop').toggle();
+        })
+    })
+</script>
+
+<!-- click add task button in modal -->
+<script>
+    $(document).ready(function () {
+        $('.add-task-button').click(function () {
+            let judul = $('.judul').val();
+            let deskripsi = $('.deskripsi').val();
+            let CSRFtoken = $('input[name="csrfmiddlewaretoken"]').val();
+            $.post('/todolist/add/', {
+                title: judul,
+                description: deskripsi,
+                csrfmiddlewaretoken: CSRFtoken
+            }, function () {
+                $('.modal').hide();
+                $('.backdrop').hide();
+                $.get('/todolist/json/', function (data, status) {
+                    let content = '';
+                    for (let i = 0; i < data.length; i++) {
+                        let message = data[i].fields.is_finished ? 'Selesai' :
+                            'Belum Selesai';
+                        let color = data[i].fields.is_finished ? 'blue' : 'red';
+                        content += `
+                <div class="text-white hover:scale-105 duration-150 flex flex-row justify-between p-3 lg:w-[30rem] sm:w-[25rem] h-24 bg-zinc-800 box-shadow-md rounded-xl">
+                    <div>
+                    <h2 class="font-semibold lg:text-md sm:text-sm">${data[i].fields.title}</h2>
+                    <h3 class="lg:text-sm sm:text-xs text-gray-500">${data[i].fields.description}</h3>
+                    <p class="text-xs text-gray-500">created: ${data[i].fields.date}</p>
+                    <p class="text-xs font-semibold text-${color}-500">${message}</p>
+                  </div>
+                  <div class="flex flex-col text-sm lg:scale-100 sm:scale-60">
+                    <a href="update/${data[i].pk}"><button class="m-1 bg-blue-500 hover:bg-blue-700 hover:cursor-pointer h-7 w-20 rounded-md">Update</button></a>
+                    <a href="delete/${data[i].pk}"><button class="m-1 bg-red-500 hover:bg-red-700 hover:cursor-pointer h-7 w-20 rounded-md">Delete</button></a>
+                  </div>
+                </div>
+              `;
+                        $('.content').html(content);
+                    }
+                })
+            })
+        })
+    })
+</script>
+
+<!-- click modals backdrop -->
+<script>
+    $(document).ready(function () {
+        $('.backdrop').click(function () {
+            $('.modal').hide();
+            $('.backdrop').hide();
+        })
+    })
+</script>
 
 {% endblock content %}
