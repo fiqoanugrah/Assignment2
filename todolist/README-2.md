@@ -1,6 +1,6 @@
-## Asynchronus Programming dan Synchronus programming
+## Asynchronus Programming and Synchronus programming
 - Asynchronic programming: multi-thread which means that operations or programs can run in parallel, non-blocking which means that it can send multiple requests to the server
-- Synchronus programming: single-thread which means that it can only run one operation or program at a time, blocking which means that it can only send one request to the server and can send another request if the previous request has been completed
+- Synchronus programming: single-thread which means it can only run one operation or program at a time, blocking which means it can only send one request to the server and can send another request if the previous request has been completed
 
 ## Event-Driven Programming Paradigm
 - a paradigm in which entities communicate indirectly by sending messages to other entities through an intermediary.
